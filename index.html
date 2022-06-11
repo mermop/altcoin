@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #queen {
+                background-image: url('images/queen-elizabeth.png');
+                max-width: 522px;
+                padding-bottom: 100%; /* 16:9 ratio = 9 / 16 = 0.5625 */
+                background-size: contain;
+                position: relative;
+                background-repeat: no-repeat;
+            }
+            .feature {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-size: contain;
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+            }
+            #eyeliner[data-current="1"] {
+                background-image: url('images/eyeliner/1.png')
+            }
+            #eyeliner[data-current="2"] {
+                background-image: url('images/eyeliner/2.png')
+            }
+            #eyeliner[data-current="3"] {
+                background-image: url('images/eyeliner/3.png')
+            }
+            #eyeliner[data-current="4"] {
+                background-image: url('images/eyeliner/4.png')
+            }
+            #eyebrow[data-current="1"] {
+                background-image: url('images/eyebrow/1.png')
+            }
+            #eyebrow[data-current="2"] {
+                background-image: url('images/eyebrow/2.png')
+            }
+            #eyebrow[data-current="3"] {
+                background-image: url('images/eyebrow/3.png')
+            }
+            #eyebrow[data-current="4"] {
+                background-image: url('images/eyebrow/4.png')
+            }
+            #eyeshadow[data-current="1"] {
+                background-image: url('images/eyeshadow/1.png')
+            }
+            #eyeshadow[data-current="2"] {
+                background-image: url('images/eyeshadow/2.png')
+            }
+            #eyeshadow[data-current="3"] {
+                background-image: url('images/eyeshadow/3.png')
+            }
+            #eyeshadow[data-current="4"] {
+                background-image: url('images/eyeshadow/4.png')
+            }
+            #lipstick[data-current="1"] {
+                background-image: url('images/lipstick/1.png')
+            }
+            #lipstick[data-current="2"] {
+                background-image: url('images/lipstick/2.png')
+            }
+            #lipstick[data-current="3"] {
+                background-image: url('images/lipstick/3.png')
+            }
+            #lipstick[data-current="4"] {
+                background-image: url('images/lipstick/4.png')
+            }
+            #piercing[data-current="1"] {
+                background-image: url('images/piercing/1.png')
+            }
+            #piercing[data-current="2"] {
+                background-image: url('images/piercing/2.png')
+            }
+            #piercing[data-current="3"] {
+                background-image: url('images/piercing/3.png')
+            }
+            #piercing[data-current="4"] {
+                background-image: url('images/piercing/4.png')
+            }
+            #stamp[data-current="1"] {
+                background-image: url('images/stamp/1.png')
+            }
+            #stamp[data-current="2"] {
+                background-image: url('images/stamp/2.png')
+            }
+            #stamp[data-current="3"] {
+                background-image: url('images/stamp/3.png')
+            }
+            #stamp[data-current="4"] {
+                background-image: url('images/stamp/4.png')
+            }
+            #choker[data-current="1"] {
+                background-image: url('images/choker/1.png')
+            }
+            #choker[data-current="2"] {
+                background-image: url('images/choker/2.png')
+            }
+        </style>
+        <script>
+            function switchFeature(featureName) {
+                let button = document.getElementById(featureName + "-button")
+                let featureElement = document.getElementById(featureName)
+                let currentValue = parseInt(button.dataset.current)
+                let maxValue = parseInt(button.dataset.max)
+                let newValue;
+                if(currentValue < maxValue) {
+                    newValue = currentValue + 1;
+                } else {
+                    newValue = 0;
+                }
+                button.dataset.current = newValue;
+                featureElement.dataset.current = newValue;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>altcoin</h1>
+        <div id="buttons">
+            <button data-current="1" data-max="4" id="eyeliner-button" onClick="switchFeature('eyeliner')">eyeliner</button>
+            <button data-current="1" data-max="4" id="eyeshadow-button" onClick="switchFeature('eyeshadow')">eyeshadow</button>
+            <button data-current="1" data-max="4" id="eyebrow-button" onClick="switchFeature('eyebrow')">eyebrows</button>
+            <button data-current="1" data-max="4" id="lipstick-button" onClick="switchFeature('lipstick')">lipstick</button>
+            <button data-current="1" data-max="4" id="piercing-button" onClick="switchFeature('piercing')">piercing</button>
+            <button data-current="1" data-max="2" id="choker-button" onClick="switchFeature('choker')">choker</button>
+            <button data-current="1" data-max="4" id="stamp-button" onClick="switchFeature('stamp')">stamp</button>
+        </div>
+        <div id="queen">
+            <div id="eyeshadow" class="feature" data-current="1"></div>
+            <div id="eyeliner" class="feature" data-current="1"></div>
+            <div id="eyebrow" class="feature" data-current="1"></div>
+            <div id="lipstick" class="feature" data-current="1"></div>
+            <div id="piercing" class="feature" data-current="1"></div>
+            <div id="choker" class="feature" data-current="1"></div>
+            <div id="stamp" class="feature" data-current="1"></div>
+            <div id="skin" class="feature"></div>
+            <div id="hair" class="feature"></div>
+        </div>
+    </body>
+</html>
