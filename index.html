@@ -11,7 +11,7 @@
                 position: relative;
                 background-repeat: no-repeat;
             }
-            
+
             .feature {
                 position: absolute;
                 top: 0;
@@ -105,15 +105,14 @@
             function switchFeature(featureName) {
                 let button = document.getElementById(featureName + "-button")
                 let featureElement = document.getElementById(featureName)
-                let currentValue = parseInt(button.dataset.current)
-                let maxValue = parseInt(button.dataset.max)
+                let currentValue = parseInt(featureElement.dataset.current)
+                let maxValue = parseInt(featureElement.dataset.max)
                 let newValue;
                 if(currentValue < maxValue) {
                     newValue = currentValue + 1;
                 } else {
                     newValue = 0;
                 }
-                button.dataset.current = newValue;
                 featureElement.dataset.current = newValue;
             }
         </script>
@@ -121,22 +120,22 @@
     <body>
         <h1>altcoin</h1>
         <div id="buttons">
-            <button data-current="1" data-max="4" id="eyeliner-button" onClick="switchFeature('eyeliner')">eyeliner</button>
-            <button data-current="1" data-max="4" id="eyeshadow-button" onClick="switchFeature('eyeshadow')">eyeshadow</button>
-            <button data-current="1" data-max="4" id="eyebrow-button" onClick="switchFeature('eyebrow')">eyebrows</button>
-            <button data-current="1" data-max="4" id="lipstick-button" onClick="switchFeature('lipstick')">lipstick</button>
-            <button data-current="1" data-max="4" id="piercing-button" onClick="switchFeature('piercing')">piercing</button>
-            <button data-current="1" data-max="2" id="choker-button" onClick="switchFeature('choker')">choker</button>
-            <button data-current="1" data-max="4" id="stamp-button" onClick="switchFeature('stamp')">stamp</button>
+            <button id="eyeliner-button" onClick="switchFeature('eyeliner')">eyeliner</button>
+            <button id="eyeshadow-button" onClick="switchFeature('eyeshadow')">eyeshadow</button>
+            <button id="eyebrow-button" onClick="switchFeature('eyebrow')">eyebrows</button>
+            <button id="lipstick-button" onClick="switchFeature('lipstick')">lipstick</button>
+            <button id="piercing-button" onClick="switchFeature('piercing')">piercing</button>
+            <button id="choker-button" onClick="switchFeature('choker')">choker</button>
+            <button id="stamp-button" onClick="switchFeature('stamp')">stamp</button>
         </div>
         <div id="queen">
-            <div id="eyeshadow" class="feature" data-current="1"></div>
-            <div id="eyeliner" class="feature" data-current="1"></div>
-            <div id="eyebrow" class="feature" data-current="1"></div>
-            <div id="lipstick" class="feature" data-current="1"></div>
-            <div id="piercing" class="feature" data-current="1"></div>
-            <div id="choker" class="feature" data-current="1"></div>
-            <div id="stamp" class="feature" data-current="1"></div>
+            <div id="eyeshadow" class="feature" data-current="1" data-max="4"></div>
+            <div id="eyeliner" class="feature" data-current="1" data-max="4"></div>
+            <div id="eyebrow" class="feature" data-current="1" data-max="4"></div>
+            <div id="lipstick" class="feature" data-current="1" data-max="4"></div>
+            <div id="piercing" class="feature" data-current="1" data-max="4"></div>
+            <div id="choker" class="feature" data-current="1" data-max="2"></div>
+            <div id="stamp" class="feature" data-current="1" data-max="4"></div>
         </div>
     </body>
 </html>
