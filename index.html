@@ -6,11 +6,12 @@
             #queen {
                 background-image: url('images/queen-elizabeth.png');
                 max-width: 522px;
-                padding-bottom: 100%; /* 16:9 ratio = 9 / 16 = 0.5625 */
+                padding-bottom: 100%;
                 background-size: contain;
                 position: relative;
                 background-repeat: no-repeat;
             }
+            
             .feature {
                 position: absolute;
                 top: 0;
@@ -20,6 +21,7 @@
                 height: 100%;
                 background-repeat: no-repeat;
             }
+
             #eyeliner[data-current="1"] {
                 background-image: url('images/eyeliner/1.png')
             }
@@ -135,8 +137,6 @@
             <div id="piercing" class="feature" data-current="1"></div>
             <div id="choker" class="feature" data-current="1"></div>
             <div id="stamp" class="feature" data-current="1"></div>
-            <div id="skin" class="feature"></div>
-            <div id="hair" class="feature"></div>
         </div>
     </body>
 </html>
